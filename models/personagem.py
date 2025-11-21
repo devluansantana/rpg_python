@@ -51,6 +51,9 @@ class Personagem(Atributos):
                 self.sub_classe = "Berserker"
                 self.dano_base += 10
                 self.hp_maximo -= 20
+                # Se o HP máximo foi reduzido, garante que o HP atual não fique maior que o máximo
+                if self.hp > self.hp_maximo:
+                    self.hp = self.hp_maximo
                 self.crit_chance += 0.10
                 print("Agora você é um Berserker")
             elif escolha == "2":
